@@ -4,6 +4,8 @@ import 'package:todoapp/widget/tasks_list.dart';
 import 'package:provider/provider.dart';
 
 class TaskList extends StatelessWidget {
+  const TaskList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Consumer<TaskData>(

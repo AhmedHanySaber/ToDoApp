@@ -3,10 +3,11 @@ import 'package:todoapp/screens/add_screen.dart';
 import 'package:todoapp/widget/task_list.dart';
 import 'package:provider/provider.dart';
 
-import '../model/task.dart';
 import '../model/task_data.dart';
 
 class TasksScreen extends StatelessWidget {
+  const TasksScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,7 @@ class TasksScreen extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                child: TaskList(),
+                child: const TaskList(),
               ),
             ),
           ],
