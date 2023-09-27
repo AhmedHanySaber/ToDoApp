@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/model/task.dart';
 import 'package:todoapp/model/task_data.dart';
 import 'package:todoapp/widget/tasks_list.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +16,13 @@ class TaskList extends StatelessWidget {
             itemBuilder: (context, index) {
               return TaskTile(
                   listTileDelete: () {
-                    taskData.deleteTask(taskData.tasks[index]);
+                    taskData.deleteTodo(taskData.tasks[index].id);
                   },
                   taskName: taskData.tasks[index].name,
                   isChecked: taskData.tasks[index].isDone,
                   checkBoxChange: (newValue) {
-                    taskData.updateTask(taskData.tasks[index]);
+                    taskData.updateTodo(
+                        Task(name: taskData.tasks[index].name, id: taskData.tasks[index].id, isDone: newValue!));
                   });
             });
       },
